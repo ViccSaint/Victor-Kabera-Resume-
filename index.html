@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Victor Kabera | Senior IT Support Analyst</title>
+<meta name="description" content="Victor Kabera – Senior IT Support Analyst, VIP Support Specialist &amp; Desktop Engineer. London, UK."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================
+   DESIGN SYSTEM  v5  –  VIVID GRADIENT EDITION
+   ============================================= */
+:root{
+  /* GRADIENT BG STOPS */
+  --g1:#0d0630;   /* deep indigo */
+  --g2:#1a0545;   /* rich violet */
+  --g3:#0b1d6e;   /* electric navy */
+  --g4:#003d82;   /* sapphire */
+  --g5:#005f8e;   /* ocean */
+  --g6:#007a7a;   /* teal */
+
+  /* PANEL SURFACES */
+  --panel:rgba(10,6,50,.72);
+  --panel2:rgba(16,10,68,.80);
+  --panel-border:rgba(255,255,255,.09);
+  --panel-border-h:rgba(255,255,255,.18);
+
+  /* ACCENTS */
+  --orange:#ff6b00;
+  --orange2:#ff8c38;
+  --orange3:#ffad6b;
+  --cyan:#00e5ff;
+  --cyan2:#4df8ff;
+  --lime:#a3ff47;
+  --magenta:#e040fb;
+  --amber:#ffcc00;
+  --white:#f0faff;
+  --green:#00e676;
+
+  /* BORDERS */
+  --bdr-o:rgba(255,107,0,.22);
+  --bdr-o2:rgba(255,107,0,.40);
+  --bdr-c:rgba(0,229,255,.18);
+  --bdr-c2:rgba(0,229,255,.36);
+
+  /* TEXT */
+  --text:#e8f4ff;
+  --muted:#8aadcc;
+  --faint:#2e5070;
+
+  --max:1200px;
+  --mono:'Rajdhani',sans-serif;
+  --hud:'Orbitron',sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ── VIVID GRADIENT BODY ── */
+body{
+  font-family:var(--body);
+  color:var(--text);
+  overflow-x:hidden;
+  /* Animated multi-stop gradient background */
+  background:
+    linear-gradient(135deg,
+      var(--g1) 0%,
+      var(--g2) 18%,
+      var(--g3) 38%,
+      var(--g4) 55%,
+      var(--g5) 72%,
+      var(--g6) 100%
+    );
+  background-attachment:fixed;
+  min-height:100vh;
+}
+
+/* Animated colour-shift overlay */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 45% at 10% 20%, rgba(224,64,251,.13) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 55% at 88% 75%, rgba(0,229,255,.12) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 50% 103%, rgba(163,255,71,.09) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 40% at 55% 0%, rgba(255,107,0,.10) 0%, transparent 50%);
+  animation:ambientShift 14s ease-in-out infinite alternate;
+}
+@keyframes ambientShift{
+  0%{opacity:.8;transform:scale(1)}
+  100%{opacity:1;transform:scale(1.06)}
+}
+
+/* Scanlines */
+body::after{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(
+    0deg,rgba(0,0,0,.10) 0px,rgba(0,0,0,.10) 1px,transparent 1px,transparent 4px
+  );
+}
+
+/* Moving grid */
+.grid-bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:56px 56px;
+  animation:gridMove 20s linear infinite;
+}
+@keyframes gridMove{to{background-position:56px 56px}}
+
+main,header,footer,.container{position:relative;z-index:1}
+.container{width:min(var(--max),calc(100% - 32px));margin:auto}
+a{text-decoration:none;color:inherit}
+
+/* ── KEYFRAMES ── */
+@keyframes pulse-ring{
+  0%{transform:scale(.8);opacity:.9}
+  70%{transform:scale(1.6);opacity:0}
+  100%{transform:scale(1.6);opacity:0}
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.1}}
+@keyframes shimmer{0%{left:-120%}100%{left:220%}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes scan{0%{top:-3%}100%{top:107%}}
+@keyframes slideUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gradGlow{
+  0%,100%{box-shadow:0 0 28px rgba(255,107,0,.4),0 6px 22px rgba(255,107,0,.25)}
+  50%{box-shadow:0 0 50px rgba(0,229,255,.45),0 8px 30px rgba(0,229,255,.3)}
+}
+
+/* ===================== NAV ===================== */
+.topbar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,3,40,.88);
+  backdrop-filter:blur(26px) saturate(200%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--orange),var(--cyan),var(--magenta),transparent);
+  opacity:.6;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{
+  position:relative;width:48px;height:48px;border-radius:12px;overflow:hidden;
+  background:linear-gradient(135deg,rgba(255,107,0,.18),rgba(0,229,255,.15));
+  border:1px solid var(--bdr-o2);
+  display:grid;place-items:center;
+  font-family:var(--hud);font-weight:900;font-size:14px;color:var(--orange);
+  box-shadow:0 0 22px rgba(255,107,0,.3),inset 0 1px 0 rgba(255,255,255,.08);
+}
+.brand-mark::after{
+  content:'';position:absolute;top:0;left:-120%;width:80%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+  animation:shimmer 3.5s ease-in-out infinite;
+}
+.brand-info strong{
+  display:block;font-family:var(--hud);font-weight:700;font-size:14px;letter-spacing:.06em;
+  background:linear-gradient(90deg,var(--white),var(--orange2),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.brand-info small{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;flex-wrap:wrap;gap:4px}
+.nav-links a{
+  padding:8px 14px;border-radius:6px;
+  font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);border:1px solid transparent;transition:all .22s;
+}
+.nav-links a:hover{color:var(--orange);background:rgba(255,107,0,.09);border-color:var(--bdr-o);box-shadow:0 0 14px rgba(255,107,0,.18)}
+.status-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border-radius:6px;
+  background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.25);
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);
+}
+.pulse-dot{position:relative;width:8px;height:8px}
+.pulse-dot span{display:block;width:100%;height:100%;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 1.6s ease-in-out infinite}
+.pulse-dot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(0,230,118,.5);animation:pulse-ring 2s ease-out infinite}
+
+/* ===================== LAYOUT ===================== */
+section{padding:22px 0}
+
+/* Section heading system */
+.hud-tag{display:inline-flex;align-items:center;gap:12px;margin-bottom:14px}
+.hud-tag::before{content:'';width:3px;height:24px;border-radius:2px;background:linear-gradient(180deg,var(--orange),var(--cyan))}
+.hud-tag span{font-family:var(--hud);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+h2{font-family:var(--hud);font-weight:800;font-size:clamp(2rem,4.5vw,3.4rem);letter-spacing:-.02em;line-height:.95;margin-bottom:10px}
+.grad{background:linear-gradient(120deg,var(--white) 25%,var(--orange2) 60%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-sub{color:var(--muted);max-width:70ch;margin-bottom:26px;line-height:1.8;font-size:15px}
+
+/* ===================== GLASS PANELS ===================== */
+.glass{
+  background:var(--panel);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid var(--panel-border);
+  border-radius:18px;padding:26px;
+  position:relative;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
+}
+.glass:hover{border-color:var(--panel-border-h);box-shadow:0 8px 40px rgba(0,0,0,.35),0 0 30px rgba(255,107,0,.07)}
+/* top-left corner accent */
+.glass::before{
+  content:'';position:absolute;top:0;left:0;width:70px;height:70px;
+  background:linear-gradient(135deg,rgba(255,107,0,.18) 0%,transparent 60%);
+  border-radius:18px 0 0 0;pointer-events:none;
+}
+/* bottom-right corner accent */
+.glass::after{
+  content:'';position:absolute;bottom:0;right:0;width:50px;height:50px;
+  background:linear-gradient(315deg,rgba(0,229,255,.14) 0%,transparent 60%);
+  pointer-events:none;
+}
+.glass h3{font-family:var(--hud);font-size:1.2rem;color:var(--white);letter-spacing:.03em;margin-bottom:18px}
+
+/* p-tag label */
+.p-tag{font-family:var(--hud);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.p-tag::before{content:'►';font-size:8px;color:var(--cyan)}
+
+/* ===================== HERO ===================== */
+.hero{padding:52px 0 28px}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:start}
+
+.hero-card{
+  position:relative;overflow:hidden;
+  border-radius:20px;padding:52px 48px;
+  background:var(--panel2);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border:1px solid var(--panel-border);
+}
+/* scan sweep */
+.hero-card::before{
+  content:'';position:absolute;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--orange),var(--cyan),var(--magenta),transparent);
+  opacity:.55;z-index:2;animation:scan 5s linear infinite;
+}
+/* corner top-right */
+.hero-card .c-tr{position:absolute;top:0;right:0;width:90px;height:90px;background:linear-gradient(to left,var(--orange) 2px,transparent 2px),linear-gradient(to bottom,var(--orange) 2px,transparent 2px);opacity:.4;pointer-events:none}
+/* corner bottom-left */
+.hero-card .c-bl{position:absolute;bottom:0;left:0;width:90px;height:90px;background:linear-gradient(to right,var(--cyan) 2px,transparent 2px),linear-gradient(to top,var(--cyan) 2px,transparent 2px);opacity:.35;pointer-events:none}
+
+.hero-id{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 16px;border-radius:4px;
+  background:rgba(255,107,0,.09);border:1px solid var(--bdr-o2);
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);
+}
+.hero-id::before{content:'[SYS]> ';color:var(--cyan);margin-right:4px;font-weight:700}
+
+h1{font-family:var(--hud);font-size:clamp(4rem,9vw,8rem);font-weight:900;line-height:.88;letter-spacing:-.04em;margin-top:20px}
+h1 .line1{display:block;background:linear-gradient(135deg,#fff,var(--orange2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h1 .line2{display:block;background:linear-gradient(135deg,var(--cyan),var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.hero-role{margin-top:18px;font-family:var(--mono);font-size:14px;font-weight:600;color:var(--orange3);letter-spacing:.06em;border-left:3px solid var(--orange);padding-left:14px;line-height:1.7}
+.hero-copy{margin-top:16px;color:var(--muted);font-size:15px;line-height:1.82;max-width:66ch}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+
+/* Buttons */
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 26px;border-radius:8px;
+  font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  transition:all .28s;border:1px solid transparent;cursor:pointer;
+}
+.btn .shine{position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transition:left .5s}
+.btn:hover .shine{left:220%}
+.btn-fire{
+  background:linear-gradient(135deg,#8b2e00,var(--orange),var(--orange2));
+  border-color:var(--orange2);color:#fff;
+  box-shadow:0 0 30px rgba(255,107,0,.45),0 6px 20px rgba(255,107,0,.28);
+  animation:float 3s ease-in-out infinite,gradGlow 4s ease-in-out infinite;
+}
+.btn-fire:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 0 55px rgba(255,107,0,.65),0 14px 32px rgba(255,107,0,.45);animation:none}
+.btn-ice{
+  background:rgba(0,229,255,.07);border-color:var(--bdr-c2);color:var(--cyan);
+  box-shadow:0 0 18px rgba(0,229,255,.1);
+}
+.btn-ice:hover{background:rgba(0,229,255,.18);box-shadow:0 0 36px rgba(0,229,255,.35);transform:translateY(-4px);color:#fff;border-color:var(--cyan)}
+
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.mtag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 14px;border-radius:6px;
+  background:rgba(255,255,255,.04);border:1px solid var(--panel-border);
+  font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);letter-spacing:.04em;
+  transition:all .22s;
+}
+.mtag:hover{border-color:var(--bdr-o);color:var(--orange3);background:rgba(255,107,0,.06)}
+
+/* Hero sidebar */
+.hero-sidebar{display:grid;gap:16px}
+.hud-panel{
+  position:relative;overflow:hidden;
+  background:var(--panel);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--panel-border);border-radius:14px;padding:20px;
+  transition:border-color .3s,box-shadow .3s;
+}
+.hud-panel:hover{border-color:var(--bdr-o);box-shadow:0 0 32px rgba(255,107,0,.09)}
+.hud-panel::after{content:'';position:absolute;top:0;right:0;width:40px;height:40px;background:linear-gradient(to left,var(--orange) 2px,transparent 2px),linear-gradient(to bottom,var(--orange) 2px,transparent 2px);opacity:.25;pointer-events:none}
+
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{
+  padding:14px 12px;border-radius:10px;text-align:center;
+  background:rgba(255,107,0,.07);border:1px solid rgba(255,107,0,.16);
+  transition:all .25s;
+}
+.stat:hover{background:rgba(255,107,0,.16);border-color:var(--bdr-o2);box-shadow:0 0 20px rgba(255,107,0,.18);transform:scale(1.04)}
+.stat-n{font-family:var(--hud);font-size:2rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--orange),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{margin-top:7px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+.ci{padding:11px 13px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);transition:border-color .2s}
+.ci:hover{border-color:var(--bdr-c2)}
+.ci label{font-family:var(--hud);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:5px}
+.ci a{font-size:13px;font-weight:600;color:var(--cyan)}
+.ci a:hover{color:#fff;text-shadow:0 0 10px var(--cyan)}
+.ci span{font-size:13px;font-weight:600;color:var(--text)}
+
+.role-badge{
+  padding:10px 13px;border-radius:8px;
+  background:rgba(0,229,255,.07);border:1px solid var(--bdr-c);
+  font-family:var(--mono);font-size:12px;font-weight:600;color:var(--cyan);letter-spacing:.04em;
+  transition:all .22s;cursor:default;
+}
+.role-badge:hover{background:rgba(0,229,255,.16);border-color:var(--cyan);color:#fff;box-shadow:0 0 18px rgba(0,229,255,.22)}
+
+/* ===================== HIGHLIGHTS STRIP ===================== */
+.hstrip{
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  padding:28px;border-radius:16px;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.1);
+}
+.hstrip::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(255,107,0,.08) 0%,rgba(0,229,255,.06) 50%,rgba(163,255,71,.06) 100%);
+  pointer-events:none;
+}
+.hstrip::after{
+  content:'';position:absolute;top:0;left:-120%;width:50%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+  animation:shimmer 5s ease-in-out infinite;
+}
+.hitem{padding-right:16px;border-right:1px solid rgba(255,255,255,.08)}
+.hitem:last-child{border-right:none;padding-right:0}
+.hi-label{font-family:var(--hud);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:7px}
+.hi-val{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--text);line-height:1.6}
+
+/* ===================== PROFILE ===================== */
+.profile-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  padding:40px;border-radius:20px;
+  background:var(--panel);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--panel-border);position:relative;overflow:hidden;
+}
+.profile-block::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--magenta),var(--cyan),var(--lime),transparent)}
+.profile-label{font-family:var(--hud);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.profile-block h3{font-family:var(--hud);font-size:1.9rem;color:#fff;letter-spacing:-.02em;line-height:1.15}
+
+/* ===================== SKILLS ===================== */
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{padding:8px 12px;border-radius:5px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;transition:all .22s;cursor:default}
+.ch-o{background:rgba(255,107,0,.10);border:1px solid rgba(255,107,0,.24);color:var(--orange3)}
+.ch-o:hover{background:rgba(255,107,0,.22);border-color:var(--orange);color:#fff;box-shadow:0 0 14px rgba(255,107,0,.25)}
+.ch-c{background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.18);color:var(--cyan2)}
+.ch-c:hover{background:rgba(0,229,255,.18);border-color:var(--cyan);color:#fff;box-shadow:0 0 14px rgba(0,229,255,.22)}
+.ch-g{background:rgba(163,255,71,.07);border:1px solid rgba(163,255,71,.18);color:var(--lime)}
+.ch-g:hover{background:rgba(163,255,71,.18);border-color:var(--lime);color:#fff;box-shadow:0 0 14px rgba(163,255,71,.22)}
+.ch-m{background:rgba(224,64,251,.08);border:1px solid rgba(224,64,251,.2);color:#ea80fc}
+.ch-m:hover{background:rgba(224,64,251,.2);border-color:var(--magenta);color:#fff}
+
+/* Bars */
+.bars{display:grid;gap:16px}
+.brow{display:grid;gap:7px}
+.bhead{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;font-weight:600}
+.bpct{color:var(--orange)}
+.track{height:9px;border-radius:3px;background:rgba(255,255,255,.07);position:relative;overflow:visible}
+.fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#5a1e00,var(--orange),var(--cyan));box-shadow:0 0 14px rgba(255,107,0,.5);position:relative}
+.fill::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 14px var(--orange),0 0 28px rgba(255,107,0,.6)}
+
+/* ===================== EXPERIENCE ===================== */
+.timeline{display:grid;gap:14px}
+.job{
+  display:grid;grid-template-columns:215px 1fr;
+  background:var(--panel);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--panel-border);border-radius:18px;overflow:hidden;
+  position:relative;transition:all .3s;
+}
+.job::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--orange),var(--magenta),var(--cyan));opacity:0;transition:opacity .3s}
+.job:hover{border-color:rgba(255,107,0,.28);box-shadow:0 0 44px rgba(255,107,0,.08),0 22px 55px rgba(0,0,0,.4);transform:translateY(-2px)}
+.job:hover::before{opacity:1}
+.jleft{padding:24px 20px;border-right:1px solid var(--panel-border);background:rgba(255,107,0,.03)}
+.jdate{display:inline-flex;padding:6px 10px;border-radius:4px;background:rgba(255,107,0,.12);border:1px solid rgba(255,107,0,.28);font-family:var(--hud);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.jleft h3{margin-top:12px;font-family:var(--hud);font-size:1.1rem;color:#fff;letter-spacing:.01em;line-height:1.2}
+.jleft p{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.55;font-family:var(--mono)}
+.jright{padding:24px}
+.jrole{font-family:var(--hud);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
+.jdesc{color:var(--muted);line-height:1.78;margin-bottom:12px;font-size:14px}
+.jlist{display:grid;gap:8px;padding-left:18px}
+.jlist li{color:var(--muted);font-size:14px;line-height:1.68}
+.jlist li::marker{color:var(--orange)}
+.jlist li strong{color:var(--text)}
+.ttags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;padding-top:16px;border-top:1px solid var(--panel-border)}
+.tt{padding:5px 10px;border-radius:4px;font-family:var(--hud);font-size:11px;font-weight:600;letter-spacing:.06em;background:rgba(255,107,0,.07);border:1px solid rgba(255,107,0,.15);color:var(--faint)}
+
+/* ===================== EDUCATION ===================== */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.edu-item{padding:16px;border-radius:10px;background:rgba(255,255,255,.035);border:1px solid var(--panel-border);transition:border-color .22s}
+.edu-item:hover{border-color:var(--bdr-o)}
+.edu-item h4{font-family:var(--hud);font-size:13px;color:var(--orange3);margin-bottom:6px;letter-spacing:.04em;line-height:1.4}
+.edu-item p{color:var(--muted);font-size:13px;line-height:1.6;font-family:var(--mono)}
+
+/* ===================== CONTACT ===================== */
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cc{
+  padding:28px;border-radius:18px;
+  background:var(--panel);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--panel-border);position:relative;overflow:hidden;
+  transition:all .3s;
+}
+.cc:hover{border-color:var(--bdr-o2);box-shadow:0 0 40px rgba(255,107,0,.13);transform:translateY(-4px)}
+.cc::after{content:'';position:absolute;top:0;right:0;width:55px;height:55px;background:linear-gradient(to left,var(--orange) 2px,transparent 2px),linear-gradient(to bottom,var(--orange) 2px,transparent 2px);opacity:.28;pointer-events:none}
+.cc-icon{width:46px;height:46px;border-radius:12px;background:rgba(255,107,0,.12);border:1px solid rgba(255,107,0,.25);display:grid;place-items:center;font-size:20px;margin-bottom:14px}
+.cc h4{font-family:var(--hud);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.cc a{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--text);display:block}
+.cc a:hover{color:var(--orange);text-shadow:0 0 12px rgba(255,107,0,.55)}
+.cc p{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--text)}
+
+/* ===================== FOOTER ===================== */
+.footer{padding:26px 0 56px}
+.foot{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:22px 28px;border-radius:14px;
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--panel-border);
+}
+.foot-brand{font-family:var(--hud);font-size:12px;font-weight:700;letter-spacing:.08em;background:linear-gradient(90deg,var(--orange),var(--cyan),var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.foot-r{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:1060px){
+  .hero-grid,.dual,.skill-grid,.hstrip,.cg{grid-template-columns:1fr 1fr}
+  .hero-sidebar{grid-column:1/-1;grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:800px){
+  .hero-grid,.dual,.skill-grid,.hstrip,.cg,.stats-grid,.hero-sidebar,.profile-block{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr}
+  .jleft{border-right:none;border-bottom:1px solid var(--panel-border)}
+  .hitem{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px}
+  h1{font-size:3.4rem}
+  .hero-card{padding:28px 22px}
+  .nav{flex-direction:column;align-items:flex-start}
+}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark">VK</span>
+      <span class="brand-info">
+        <strong>Victor Kabera</strong>
+        <small>IT Support // London, UK</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="status-pill">
+      <span class="pulse-dot"><span></span></span>
+      Available Now
+    </span>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-card reveal">
+      <div class="c-tr"></div>
+      <div class="c-bl"></div>
+      <span class="hero-id">Senior IT Support Analyst // London, UK</span>
+      <h1>
+        <span class="line1">Victor</span>
+        <span class="line2">Kabera</span>
+      </h1>
+      <div class="hero-role">
+        Desktop Support Engineer &nbsp;·&nbsp; VIP IT Specialist &nbsp;·&nbsp; End-User Computing Analyst
+      </div>
+      <p class="hero-copy">
+        Enterprise IT support professional with 11+ years of experience delivering endpoint management, identity administration, ServiceNow-driven incident resolution, application troubleshooting, and executive-level VIP support across Windows, macOS, iOS, Android, and cloud platforms — spanning broadcast media, financial services, non-profit, public sector, retail, and energy industries.
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-fire" href="#contact"><span class="shine"></span>&#9993; GET IN TOUCH</a>
+        <a class="btn btn-ice" href="#experience"><span class="shine"></span>&#9654; VIEW EXPERIENCE</a>
+      </div>
+      <div class="meta-row">
+        <span class="mtag">&#128205; Brixton, London SW9 8</span>
+        <span class="mtag">&#9993; victor.kbr@gmail.com</span>
+        <span class="mtag">&#128222; 07553 122 299</span>
+        <span class="mtag">&#127906; Network+ Certified</span>
+        <span class="mtag">&#127942; MCSA &amp; MCITP</span>
+      </div>
+    </div>
+
+    <aside class="hero-sidebar">
+      <div class="hud-panel reveal">
+        <div class="p-tag">Operational Stats</div>
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-n">11+</div><div class="stat-l">Years IT Support</div></div>
+          <div class="stat"><div class="stat-n">T1–T3</div><div class="stat-l">All Support Tiers</div></div>
+          <div class="stat"><div class="stat-n">VIP</div><div class="stat-l">Exec Support</div></div>
+          <div class="stat"><div class="stat-n">12+</div><div class="stat-l">Organisations</div></div>
+        </div>
+      </div>
+      <div class="hud-panel reveal">
+        <div class="p-tag">Contact Channels</div>
+        <div style="display:grid;gap:9px">
+          <div class="ci"><label>Primary Email</label><a href="mailto:victor.kbr@gmail.com">victor.kbr@gmail.com</a></div>
+          <div class="ci"><label>Secondary Email</label><a href="mailto:vic.saint@live.com">vic.saint@live.com</a></div>
+          <div class="ci"><label>Phone</label><span>07553 122 299 &nbsp;/&nbsp; 07584 094 292</span></div>
+        </div>
+      </div>
+      <div class="hud-panel reveal">
+        <div class="p-tag">Target Roles</div>
+        <div style="display:grid;gap:8px">
+          <div class="role-badge">Senior IT Support Analyst</div>
+          <div class="role-badge">Desktop Support Engineer</div>
+          <div class="role-badge">VIP IT Support Specialist</div>
+          <div class="role-badge">End-User Computing Analyst</div>
+          <div class="role-badge">IT Operations Analyst</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════ HIGHLIGHTS BAND ══════════ -->
+<section>
+  <div class="container reveal">
+    <div class="hstrip">
+      <div class="hitem">
+        <div class="hi-label">&#128187; Endpoint Management</div>
+        <div class="hi-val">Intune &middot; Autopilot &middot; JAMF Pro &middot; SCCM &middot; ABM</div>
+      </div>
+      <div class="hitem">
+        <div class="hi-label">&#128274; Identity &amp; Security</div>
+        <div class="hi-val">Active Directory &middot; Entra ID &middot; MFA &middot; BitLocker &middot; Okta</div>
+      </div>
+      <div class="hitem">
+        <div class="hi-label">&#128203; ITSM Platform</div>
+        <div class="hi-val">ServiceNow &middot; CMDB &middot; ITIL &middot; SLA Management</div>
+      </div>
+      <div class="hitem">
+        <div class="hi-label">&#128225; Networking &amp; Apps</div>
+        <div class="hi-val">TCP/IP &middot; DNS &middot; DHCP &middot; VPN &middot; M365 &middot; Zoom</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROFILE ══════════ -->
+<section>
+  <div class="container reveal">
+    <div class="profile-block">
+      <div>
+        <div class="profile-label">// personal_profile.md</div>
+        <h3>Committed to reliable, professional IT service delivery</h3>
+      </div>
+      <div>
+        <p style="color:var(--muted);line-height:1.82;margin-bottom:14px;font-size:15px">
+          I am a bright, talented, and ambitious IT support professional with a strong technical background and excellent customer service skills. I am self-disciplined and able to work effectively with minimal supervision across a broad range of enterprise technologies and multi-platform environments.
+        </p>
+        <p style="color:var(--muted);line-height:1.82;font-size:15px">
+          I excel at diagnosing hardware and software problems, delivering high-quality solutions that align with business objectives. I bring a strong team ethic, a deadline-driven mindset, and the ability to communicate complex technical solutions clearly to both technical and non-technical stakeholders at all levels.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SKILLS ══════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="hud-tag reveal"><span>Skills &amp; Technologies</span></div>
+    <h2 class="reveal"><span class="grad">Technical Expertise</span></h2>
+    <p class="sec-sub reveal">Hands-on enterprise-grade expertise spanning the full modern desktop stack — zero-touch deployment, identity &amp; access management, application troubleshooting, VIP executive support, and ITSM-driven service delivery across multi-platform environments.</p>
+
+    <div class="skill-grid">
+      <div class="glass reveal">
+        <h3>Core Support Capabilities</h3>
+        <div class="chips">
+          <span class="chip ch-o">ServiceNow ITSM</span>
+          <span class="chip ch-o">Active Directory</span>
+          <span class="chip ch-o">VIP / Executive Support</span>
+          <span class="chip ch-o">Incident Management</span>
+          <span class="chip ch-o">1st / 2nd / 3rd Line Support</span>
+          <span class="chip ch-c">Application Troubleshooting</span>
+          <span class="chip ch-c">Remote Technical Support</span>
+          <span class="chip ch-c">Hardware &amp; Software Config</span>
+          <span class="chip ch-c">Network Troubleshooting</span>
+          <span class="chip ch-c">Mobile Device Management</span>
+          <span class="chip ch-c">Software Deployment &amp; Rollout</span>
+          <span class="chip ch-c">Asset &amp; Inventory Management</span>
+          <span class="chip ch-g">User Training &amp; Documentation</span>
+          <span class="chip ch-g">System Configuration</span>
+          <span class="chip ch-g">Defect Analysis &amp; Root Cause</span>
+          <span class="chip ch-g">Change &amp; Problem Management</span>
+          <span class="chip ch-g">Cross-functional Collaboration</span>
+          <span class="chip ch-m">Stakeholder Communication</span>
+          <span class="chip ch-m">Continuous Service Improvement</span>
+        </div>
+      </div>
+
+      <div class="glass reveal">
+        <h3>IT Proficiency Levels</h3>
+        <div class="bars">
+          <div class="brow"><div class="bhead"><span>Desktop &amp; VIP Support</span><span class="bpct">96%</span></div><div class="track"><div class="fill" style="width:96%"></div></div></div>
+          <div class="brow"><div class="bhead"><span>Application Troubleshooting</span><span class="bpct">95%</span></div><div class="track"><div class="fill" style="width:95%"></div></div></div>
+          <div class="brow"><div class="bhead"><span>Active Directory / Entra ID</span><span class="bpct">94%</span></div><div class="track"><div class="fill" style="width:94%"></div></div></div>
+          <div class="brow"><div class="bhead"><span>ServiceNow &amp; ITSM</span><span class="bpct">93%</span></div><div class="track"><div class="fill" style="width:93%"></div></div></div>
+          <div class="brow"><div class="bhead"><span>Endpoint Management (Intune / JAMF)</span><span class="bpct">92%</span></div><div class="track"><div class="fill" style="width:92%"></div></div></div>
+          <div class="brow"><div class="bhead"><span>Microsoft 365 Stack</span><span class="bpct">91%</span></div><div class="track"><div class="fill" style="width:91%"></div></div></div>
+          <div class="brow"><div class="bhead"><span>Networking &amp; VPN Support</span><span class="bpct">88%</span></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass reveal" style="margin-top:16px">
+      <h3>Platforms, Tools &amp; Systems</h3>
+      <div class="chips">
+        <span class="chip ch-o">Windows 10 / 11</span>
+        <span class="chip ch-o">macOS Sequoia / Sonoma</span>
+        <span class="chip ch-o">Microsoft Intune</span>
+        <span class="chip ch-o">Active Directory (AD DS)</span>
+        <span class="chip ch-o">Entra ID (Azure AD)</span>
+        <span class="chip ch-o">ServiceNow</span>
+        <span class="chip ch-o">JAMF Pro</span>
+        <span class="chip ch-o">JAMF Connect</span>
+        <span class="chip ch-c">Windows Autopilot</span>
+        <span class="chip ch-c">SCCM / MECM</span>
+        <span class="chip ch-c">Apple Business Manager</span>
+        <span class="chip ch-c">VMware Workspace ONE</span>
+        <span class="chip ch-c">CrowdStrike Falcon</span>
+        <span class="chip ch-c">Microsoft Defender for Endpoint</span>
+        <span class="chip ch-c">BitLocker Encryption</span>
+        <span class="chip ch-c">MFA / SSPR</span>
+        <span class="chip ch-c">Conditional Access Policies</span>
+        <span class="chip ch-c">Group Policy (GPO)</span>
+        <span class="chip ch-c">Okta</span>
+        <span class="chip ch-c">Microsoft 365</span>
+        <span class="chip ch-c">Exchange Online</span>
+        <span class="chip ch-c">SharePoint Online</span>
+        <span class="chip ch-c">OneDrive for Business</span>
+        <span class="chip ch-g">Microsoft Teams</span>
+        <span class="chip ch-g">Slack</span>
+        <span class="chip ch-g">Zoom / Zoom Rooms</span>
+        <span class="chip ch-g">Google Workspace</span>
+        <span class="chip ch-g">VMware Horizon</span>
+        <span class="chip ch-g">Citrix Virtual Desktop</span>
+        <span class="chip ch-g">PowerShell Scripting</span>
+        <span class="chip ch-g">DNS / DHCP / TCP-IP</span>
+        <span class="chip ch-g">VPN (Cisco, GlobalProtect)</span>
+        <span class="chip ch-g">Mimecast</span>
+        <span class="chip ch-g">Zendesk / HappyFox</span>
+        <span class="chip ch-g">TeamViewer</span>
+        <span class="chip ch-m">Avaya / Mitel VoIP</span>
+        <span class="chip ch-m">Adobe Creative Cloud</span>
+        <span class="chip ch-m">Bloomberg Terminal</span>
+        <span class="chip ch-m">PXE Boot / OS Imaging</span>
+        <span class="chip ch-m">Dropbox Business</span>
+        <span class="chip ch-m">WebEx</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EXPERIENCE ══════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="hud-tag reveal"><span>Career History</span></div>
+    <h2 class="reveal"><span class="grad">Work Experience</span></h2>
+    <p class="sec-sub reveal">11+ years of progressive IT support across broadcast media, financial services, non-profit, public sector, retail, and energy — delivering Tier 1–3 incident resolution, zero-touch endpoint deployment, IAM administration, and executive-level VIP support across 12+ organisations.</p>
+
+    <div class="timeline">
+
+      <!-- JOB 1 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Nov 2025 – Jun 2026</span>
+          <h3>CNBC / NBCUniversal / Versant Media Group</h3>
+          <p>London &mdash; Broadcast &amp; Digital Media<br/><br/>Brands: USA Network &middot; MSNBC &middot; E! &middot; SYFY &middot; Rotten Tomatoes</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// Senior IT Operations &amp; End-User Computing Analyst</div>
+          <p class="jdesc">Embedded as a senior technical escalation point across a multi-brand broadcast and digital media estate. Delivered high-impact EUC support within a live production environment where service continuity, security, and rapid incident recovery were business-critical.</p>
+          <ul class="jlist">
+            <li>Engineered <strong>zero-touch Windows 11 and macOS deployment workflows</strong> using Microsoft Autopilot and Intune, reducing provisioning time significantly.</li>
+            <li>Administered the full <strong>IAM stack</strong> — Active Directory and Entra ID provisioning, deprovisioning, OU/group management, access reviews, and Conditional Access enforcement.</li>
+            <li>Strengthened <strong>endpoint security posture</strong> through MFA, SSPR, BitLocker encryption, Defender for Endpoint, and Intune compliance baselines for audit readiness.</li>
+            <li>Delivered <strong>Tier 1–3 support</strong> across Windows 11, macOS, iOS, and Android — resolving hardware, software, authentication, networking, and VPN faults within agreed SLAs.</li>
+            <li>Provided <strong>VIP and executive-level white-glove support</strong> to senior journalists, production leads, and leadership during live editorial and broadcast windows.</li>
+            <li>Administered <strong>Microsoft 365</strong> — Exchange Online, shared mailboxes, distribution lists, SharePoint permissions, OneDrive governance, and Teams configuration.</li>
+            <li>Managed <strong>Slack workspace governance</strong> — SSO-aligned access control, app approval reviews, and channel structure management.</li>
+            <li>Troubleshot <strong>Teams, Zoom, WebEx, and Avaya / Mitel VoIP</strong> conferencing and AV integration faults affecting live production and editorial coordination.</li>
+            <li>Maintained high-quality <strong>ServiceNow records</strong> — CMDB accuracy, incident documentation, knowledge article authoring, and SLA visibility.</li>
+            <li>Supported <strong>JAMF Pro, JAMF Connect, Apple Business Manager, SCCM, and PowerShell</strong>-based endpoint administration.</li>
+          </ul>
+          <div class="ttags">
+            <span class="tt">Windows 11</span><span class="tt">macOS</span><span class="tt">Intune</span><span class="tt">Autopilot</span><span class="tt">Active Directory</span><span class="tt">Entra ID</span><span class="tt">JAMF Pro</span><span class="tt">SCCM</span><span class="tt">ServiceNow</span><span class="tt">BitLocker</span><span class="tt">MFA / SSPR</span><span class="tt">Defender</span><span class="tt">PowerShell</span><span class="tt">M365</span><span class="tt">Slack</span><span class="tt">Zoom</span><span class="tt">VPN</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- JOB 2 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Jul 2025 – Oct 2025</span>
+          <h3>The Casbah</h3>
+          <p>Oxford Circus, London</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// Desktop Support Engineer / Senior IT Support Analyst</div>
+          <ul class="jlist">
+            <li>Delivered <strong>1st and 2nd line IT support</strong> to 200+ staff across Windows 10 / 11, macOS, Office 365, Google Workspace, and Adobe Creative Cloud.</li>
+            <li>Administered <strong>Active Directory (on-premises) and Azure AD / Entra ID</strong> — OU structure, Group Policy Objects (GPO), user provisioning, and account lifecycle management.</li>
+            <li>Deployed corporate devices via <strong>Windows Autopilot and Microsoft Intune</strong>; implemented <strong>JAMF MDM</strong> for Mac fleet standardisation and compliance.</li>
+            <li>Troubleshot Wi-Fi, VPN (Citrix), DNS / DHCP, AV, and VoIP; administered Exchange Online, Teams, OneDrive, and Dropbox Business.</li>
+            <li>Applied endpoint security via <strong>CrowdStrike Falcon, MFA enforcement, OS patch management, and access control reviews</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 3 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Apr 2025 – Jul 2025</span>
+          <h3>Greenpeace UK</h3>
+          <p>London</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// IT Support Analyst / 2nd Line Support Engineer</div>
+          <ul class="jlist">
+            <li>Provided <strong>1st and 2nd line support</strong> across hardware, software, authentication, and integration issues for all staff.</li>
+            <li>Built, configured, and deployed <strong>Windows and macOS laptops and mobile devices</strong>; managed Intune compliance policies and remote wipe capabilities.</li>
+            <li>Administered <strong>Active Directory, Entra ID, and Okta</strong>-based onboarding and offboarding workflows.</li>
+            <li>Supported <strong>Google Workspace, Microsoft 365, Zoom, and Slack</strong>; troubleshot VPN, DNS, DHCP, and LAN / WAN connectivity issues.</li>
+            <li>Authored technical documentation and end-user guides that reduced repeat tickets and improved self-service resolution rates.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 4 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Apr 2024 – Apr 2025</span>
+          <h3>EMCOR UK</h3>
+          <p>London &mdash; 1-Year Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// 1st &amp; 2nd Line Support / Service Desk Analyst</div>
+          <ul class="jlist">
+            <li>Managed on-premises and cloud IT systems — <strong>Active Directory, Entra ID (Azure AD), Office 365, and Microsoft Intune</strong>; user accounts, MFA, email, and security groups.</li>
+            <li>Deployed and managed endpoints via <strong>Intune and JAMF (Pro, Connect, Cloud)</strong>; handled <strong>SCCM / MECM</strong> OS imaging and PXE boot deployments.</li>
+            <li>Configured <strong>AD Group Policy Objects (GPO)</strong>, Exchange Online, OneDrive, Google Drive, Zoom Rooms, and Microsoft Teams integrations.</li>
+            <li>Diagnosed hardware faults across Dell, HP, Lenovo, MacBook, iPad, iPhone, and Android; troubleshot TCP / IP, DNS, Wi-Fi, VPN, and VMware Horizon.</li>
+            <li>Played a key role in the <strong>Windows 11 enterprise migration project</strong>; managed Mimecast email security and PST file migrations.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 5 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Oct 2023 – Mar 2024</span>
+          <h3>Raymond James &amp; Associates</h3>
+          <p>London &mdash; 6-Month Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// Desktop Support Engineer / Deployment Engineer</div>
+          <p class="jdesc">Part of a global deployment team for the company-wide <strong>Laptop Refresh Project</strong> — building standardised Windows and macOS images, managing build definitions, OS deployments, and application compatibility testing.</p>
+          <ul class="jlist">
+            <li>Led the <strong>Windows 10 to Windows 11 migration</strong> — installation, user data backups, application compatibility testing, and post-migration user support.</li>
+            <li>Provided <strong>white-glove VIP support</strong> to executives, senior leadership, and global end users across all Raymond James branch offices.</li>
+            <li>Managed SLA-driven incident resolution in <strong>ServiceNow</strong> — regression testing, remote mobile device troubleshooting, and new store IT deployments.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 6 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Dec 2022 – Sep 2023</span>
+          <h3>Wise Music Group</h3>
+          <p>London &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// Senior Service Desk Analyst / 2nd Line Desktop Support Engineer</div>
+          <ul class="jlist">
+            <li>Provided deskside, remote, and VIP support to <strong>350+ users globally</strong> — 70% Windows and 30% Apple macOS environments.</li>
+            <li>Managed the <strong>ServiceNow incident queue</strong>, prioritising by urgency and business impact; supported users across UK, EU, North America, Israel, and APAC.</li>
+            <li>Handled <strong>Active Directory administration</strong>, onboarding / offboarding, access requests, hardware diagnostics, repair, and asset database management.</li>
+            <li>Supported <strong>RDP, VPN, MDM, VMware Horizon, Citrix</strong>, and day-to-day AV and meeting room equipment maintenance.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 7 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Nov 2021 – Nov 2022</span>
+          <h3>RMS / Moody's Analytics</h3>
+          <p>London &mdash; 12-Month Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// Senior Service Desk Analyst / VIP Desktop Support Engineer</div>
+          <ul class="jlist">
+            <li>Primary IT escalation contact for <strong>London, California, and Zurich</strong> offices — Windows and macOS mixed environment.</li>
+            <li>Supported <strong>Citrix Virtual Desktop, Entra ID (Azure AD), Microsoft 365, iPhones, and iPads</strong>; escalation point from Tier 1 / 2 through to Tier 3 engineering teams.</li>
+            <li>Installed, configured, and supported <strong>Bloomberg Terminal</strong> on designated trading and analytics workstations.</li>
+            <li>Managed <strong>conference room AV systems</strong> and supported Zoom and WebEx video conferencing integrations.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 8 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Jun 2021 – Oct 2021</span>
+          <h3>Place2Be</h3>
+          <p>London &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// Senior IT Helpdesk Engineer / Senior Service Desk Analyst</div>
+          <p class="jdesc">Managed service desk operations within the IT Service Desk framework, supporting the delivery of IT strategy and providing expert 2nd and 3rd line technical support. <strong>Led the Zoom Embedded Systems Project</strong>, coordinating implementation and integration of new system capabilities across the organisation.</p>
+        </div>
+      </article>
+
+      <!-- JOB 9 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Feb 2021 – Jun 2021</span>
+          <h3>Camden Council</h3>
+          <p>London &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// 2nd Line Service Desk Analyst / Desktop Support Engineer</div>
+          <p class="jdesc">Bridged 2nd and 3rd line support for the Camden IT team. Contributed to <strong>Office 365, Microsoft Teams, Two-Factor Authentication (2FA), Windows 10 (20H2), and Citrix Virtual Desktop</strong> rollout and ongoing troubleshooting projects.</p>
+        </div>
+      </article>
+
+      <!-- JOB 10 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Mar 2020 – Feb 2021</span>
+          <h3>LRG – Leaders Romans Group</h3>
+          <p>London &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// 2nd Line Support Engineer</div>
+          <ul class="jlist">
+            <li>Supported <strong>Mitel Softphone, VMware Horizon, Microsoft 365, and MFA</strong> implementations and user adoption.</li>
+            <li>Managed Active Directory administration, VPN / remote access support, Windows Server 2016 administration, Intune smartphone configuration, and Mimecast / PST file management.</li>
+            <li>Developed self-service support documentation and contributed to ongoing IT process improvement initiatives.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- JOB 11 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Oct 2019 – Mar 2020</span>
+          <h3>WSH Group &mdash; BaxterStorey &amp; Caterlink</h3>
+          <p>Rugby &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// 1st &amp; 2nd Line Desktop Support Engineer</div>
+          <p class="jdesc">Remotely installed Office 365 apps, replaced McAfee with Sophos AV, delivered Windows 10 upgrade with OneDrive data backup and PST email migration, enabled MFA on company mobile devices, and contributed to the <strong>Microsoft Intune MDM rollout</strong>.</p>
+        </div>
+      </article>
+
+      <!-- JOB 12 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Jul 2019 – Oct 2019</span>
+          <h3>The Perfume Shop (TPS)</h3>
+          <p>UK Nationwide &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// IT Support Engineer / EPOS &amp; 2nd Line Engineer</div>
+          <p class="jdesc">Supported a network infrastructure upgrade and Windows 10 upgrade initiative across <strong>228 out of 258 stores</strong> nationwide, delivering service desk support and EPOS troubleshooting across Windows and macOS systems.</p>
+        </div>
+      </article>
+
+      <!-- JOB 13 -->
+      <article class="job reveal">
+        <div class="jleft">
+          <span class="jdate">Feb 2019 – Jul 2019</span>
+          <h3>RES Group</h3>
+          <p>UK &mdash; Contract</p>
+        </div>
+        <div class="jright">
+          <div class="jrole">// IT Service Desk Analyst / 1st Line Support</div>
+          <p class="jdesc">Provided end-to-end IT system support, analysed and resolved incidents within agreed SLA timeframes, and supported IT Group continual improvement initiatives aligned to business objectives and ITIL best practices.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EDUCATION ══════════ -->
+<section id="education">
+  <div class="container dual">
+    <div class="glass reveal">
+      <div class="hud-tag"><span>Qualifications &amp; Certifications</span></div>
+      <h2 style="font-size:2rem;margin-bottom:18px"><span class="grad">Education</span></h2>
+      <div style="display:grid;gap:12px">
+        <div class="edu-item">
+          <h4>BEng (Hons) Electronics &amp; Communication Engineering</h4>
+          <p>University of Hertfordshire &middot; 2007–2010 &middot; Grade: 2:2</p>
+        </div>
+        <div class="edu-item">
+          <h4>Microsoft Certified IT Professional (MCITP)</h4>
+          <p>Enterprise Desktop Support Technician &middot; Compu-Teach Training Centre &middot; 2015</p>
+        </div>
+        <div class="edu-item">
+          <h4>MCSA – Microsoft Certified Solutions Associate</h4>
+          <p>Windows Server Administration &middot; 2017</p>
+        </div>
+        <div class="edu-item">
+          <h4>CompTIA Network+ Certification</h4>
+          <p>Network fundamentals, infrastructure, security, and troubleshooting</p>
+        </div>
+        <div class="edu-item">
+          <h4>End-User Support – On-the-Job Training</h4>
+          <p>RES Group (Renewable Energy Systems) &middot; 2019</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass reveal">
+      <div class="hud-tag"><span>Interests &amp; Personal Profile</span></div>
+      <h2 style="font-size:2rem;margin-bottom:18px"><span class="grad">Beyond the Terminal</span></h2>
+      <p style="color:var(--muted);line-height:1.85;margin-bottom:14px;font-size:15px">
+        I am an outgoing, personable individual with a passion for football — both as a player and spectator — which fosters a team-oriented mindset, discipline, and a competitive spirit that translates directly to my professional approach.
+      </p>
+      <p style="color:var(--muted);line-height:1.85;margin-bottom:14px;font-size:15px">
+        I take great satisfaction in helping friends and family solve technology challenges, restoring gadgets and computers to peak performance, and exploring web design as a creative outlet.
+      </p>
+      <p style="color:var(--muted);line-height:1.85;font-size:15px">
+        I actively seek opportunities to broaden my IT knowledge base, believing that staying at the forefront of emerging technology is essential for sustained personal and professional growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="hud-tag reveal"><span>Get In Touch</span></div>
+    <h2 class="reveal"><span class="grad">Contact Victor</span></h2>
+    <p class="sec-sub reveal">Available for Senior IT Support, VIP Support, Desktop Support Engineering, End-User Computing Analyst, and IT Operations roles across London. Immediate start available.</p>
+    <div class="cg">
+      <div class="cc reveal">
+        <div class="cc-icon">&#9993;</div>
+        <h4>Primary Email</h4>
+        <a href="mailto:victor.kbr@gmail.com">victor.kbr@gmail.com</a>
+      </div>
+      <div class="cc reveal">
+        <div class="cc-icon">&#9993;</div>
+        <h4>Secondary Email</h4>
+        <a href="mailto:vic.saint@live.com">vic.saint@live.com</a>
+      </div>
+      <div class="cc reveal">
+        <div class="cc-icon">&#128222;</div>
+        <h4>Phone</h4>
+        <p>07553 122 299<br/>07584 094 292</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot">
+      <span class="foot-brand">Victor Kabera &mdash; Senior IT Support Analyst &mdash; London, UK</span>
+      <span class="foot-r">// cv-website-v5 &nbsp;|&nbsp; Available: Immediate Start &nbsp;|&nbsp; 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll-reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+}, {threshold: 0.07});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
